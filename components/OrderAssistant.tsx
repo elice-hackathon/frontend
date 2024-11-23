@@ -5,7 +5,10 @@ import { AssistantRuntimeProvider } from "@assistant-ui/react";
 import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
 
 import { createThread, getThreadState, sendMessage } from "@/lib/chatApi";
-import { MyThread } from "./assistant-ui/thread";
+import { MyThread } from "@/components/assistant-ui/thread";
+
+import { PurchaseBurgerItemsTool } from "@/components/tools/purchase-burger-items/PurchaseBurgerItemsTool";
+import { SuggestBurgersTool } from "@/components/tools/suggest-burgers/SuggestBurgersTool";
 
 export function OrderAssistant() {
   const threadIdRef = useRef<string | undefined>();
@@ -35,6 +38,8 @@ export function OrderAssistant() {
 
   return (
     <AssistantRuntimeProvider runtime={runtime}>
+      <SuggestBurgersTool />
+      <PurchaseBurgerItemsTool />
       <MyThread />
     </AssistantRuntimeProvider>
   );

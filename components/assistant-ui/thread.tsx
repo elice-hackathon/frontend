@@ -8,7 +8,7 @@ import {
 import { type FC } from "react";
 import { SendHorizontalIcon } from "lucide-react";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+// import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
 import { makeMarkdownText } from "@assistant-ui/react-markdown";
 import { SpeechInput } from "@/components/ui/speech-input";
@@ -43,9 +43,6 @@ const MyThreadWelcome: FC = () => {
     <ThreadPrimitive.Empty>
       <div className="flex flex-grow flex-col items-center justify-center">
         {/* TODO: Add Eli GIF */}
-        <Avatar>
-          <AvatarFallback>E</AvatarFallback>
-        </Avatar>
         <p className="mt-4 font-medium">How can I help you today?</p>
       </div>
     </ThreadPrimitive.Empty>

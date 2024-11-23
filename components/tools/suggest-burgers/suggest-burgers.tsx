@@ -9,14 +9,12 @@ import {
 } from "@/components/ui/card";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-type SuggestBurgersToolArgs = {};
+export type SuggestBurgersToolArgs = {};
 
-type BurgerItem = {
+export type BurgerItem = {
   id: number;
   name: string;
-  price: number;
-  quantity: number;
-  options: string[];
+  price_krw: number;
 };
 
 type SuggestBurgersToolResult = {
@@ -34,11 +32,11 @@ export function SuggestBurgers({
             <div className="flex items-center justify-between">
               <div className="space-y-1">
                 <CardTitle>{burger.name}</CardTitle>
-                <CardDescription>{burger.quantity}</CardDescription>
+                <CardDescription>Delicious burger</CardDescription>
                 <CardContent>
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-lg">
-                      ${burger.price.toFixed(2)}
+                      {burger.price_krw.toFixed(2)}₩
                     </span>
                   </div>
                 </CardContent>
