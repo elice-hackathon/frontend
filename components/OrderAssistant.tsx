@@ -20,10 +20,7 @@ export function OrderAssistant() {
         threadIdRef.current = thread_id;
       }
       const threadId = threadIdRef.current;
-      return sendMessage({
-        threadId,
-        messages,
-      });
+      return sendMessage({ threadId, messages });
     },
     onSwitchToNewThread: async () => {
       const { thread_id } = await createThread();

@@ -22,7 +22,7 @@ export const getThreadState = async (
 
 export const sendMessage = async (params: {
   threadId: string;
-  messages: LangChainMessage;
+  messages: LangChainMessage[];
 }) => {
   const client = createClient();
   return client.runs.stream(
