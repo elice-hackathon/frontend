@@ -1,9 +1,13 @@
-import { MyAssistant } from "@/components/MyAssistant";
+// import { MyAssistant } from "@/components/MyAssistant";
+
+// import { NewMyAssistant } from "@/components/NewMyAssistant";
+import { OrderAssistant } from "@/components/OrderAssistant";
 
 export default function Home() {
   return (
     <main className="h-dvh">
-      <MyAssistant />
+      {/* <NewMyAssistant /> */}
+      <OrderAssistant />
     </main>
   );
 }
