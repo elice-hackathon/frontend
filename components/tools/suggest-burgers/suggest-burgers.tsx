@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export type SuggestBurgersToolArgs = {};
@@ -25,26 +20,26 @@ export function SuggestBurgers({
   burgerItems,
 }: SuggestBurgersToolArgs & SuggestBurgersToolResult) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {burgerItems.map((burger, index) => (
-        <Card key={index}>
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div className="space-y-1">
-                <CardTitle>{burger.name}</CardTitle>
-                <CardDescription>Delicious burger</CardDescription>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-lg">
-                      {burger.price_krw.toFixed(2)}₩
-                    </span>
-                  </div>
-                </CardContent>
-              </div>
-            </div>
-          </CardHeader>
-        </Card>
-      ))}
+    <div className="w-full max-w-4xl mx-auto p-4">
+      <ScrollArea className="w-full whitespace-nowrap rounded-md ">
+        <div className="flex w-max space-x-4 p-4">
+          {burgerItems.map((burger, index) => (
+            <Card key={index} className="w-[250px] h-[200px] flex-shrink-0">
+              <CardHeader>
+                <CardTitle className="text-lg">{burger.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-md">
+                    {burger.price_krw}원
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
     </div>
   );
 }
