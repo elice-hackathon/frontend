@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type SuggestBurgersToolArgs = {};
 
 type BurgerItem = {

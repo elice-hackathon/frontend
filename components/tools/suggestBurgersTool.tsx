@@ -2,6 +2,7 @@
 
 import { makeAssistantToolUI } from "@assistant-ui/react";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type SuggestBurgersToolArgs = {};
 
 export const SuggestBurgersTool = makeAssistantToolUI<
@@ -9,7 +10,7 @@ export const SuggestBurgersTool = makeAssistantToolUI<
   string
 >({
   toolName: "suggest_burgers",
-  render: function SuggestBurgersUI({ args, _result }) {
+  render: function SuggestBurgersUI({ args }) {
     return (
       <div className="mb-4 flex flex-col items-center">
         <pre className="whitespace-pre-wrap break-all text-center">

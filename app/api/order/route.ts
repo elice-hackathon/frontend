@@ -45,6 +45,7 @@ async function handleRequest(req: NextRequest, method: string) {
         ...getCorsHeaders(),
       },
     });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: e.status ?? 500 });
   }
